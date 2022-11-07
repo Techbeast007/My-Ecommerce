@@ -9,13 +9,12 @@ const Products = () => (
     <Breadcrumb />
     <section className="products-page">
       <div className="container">
-        <ProductsFilter />
+        {/* <ProductsFilter /> */}
         <ProductsContent />
       </div>
     </section>
     <Footer />
   </Layout>
 )
-  
+
 export default Products
-  

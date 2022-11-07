@@ -1,3 +1,52 @@
+import { useState } from "react";
+import client from '../../lib/sanity';
+import groq from 'groq'
+// import { homepageQuery } from "pages/product/[pid]";
+import { homepageQuerys } from "pages/index"
+
+
+
+// let data: any = []
+
+// const productlist = async () => {
+
+
+
+//   await client.fetch(groq`*[_type == "ecom"]{
+// name,
+//   price,
+//   quantityAvailable,
+//   discount,
+//   category,
+//   images,
+//   currentPrice,
+//   sizes,
+//   description
+
+// }`).then(function (res) {
+//     data = res
+//     console.log(data)
+//   })
+
+//   return data
+
+
+
+
+// }
+// productlist()
+
+// export const homepageQuery = data
+
+console.log(homepageQuerys)
+// export const products = homepageQuerys.length ? homepageQuerys : homepageQuery
+// console.log(products)
+
+
+
+
+
+
 export const products = [
   {
     id: '1',
@@ -7,7 +56,7 @@ export const products = [
     quantityAvailable: 2,
     category: 'T-shirt',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
+    sizes: ['xl', 'l'],
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
       '/images/products/product-1.jpg',
@@ -66,7 +115,7 @@ export const products = [
     quantityAvailable: 2,
     category: 'T-shirt',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
+    sizes: ['xl', 'l'],
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
       '/images/products/product-2.jpg',
@@ -125,7 +174,7 @@ export const products = [
     quantityAvailable: 2,
     category: 'T-shirt',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
+    sizes: ['xl', 'l'],
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
       '/images/products/product-3.jpg',
@@ -184,7 +233,7 @@ export const products = [
     quantityAvailable: 2,
     category: 'T-shirt',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
+    sizes: ['xl', 'l'],
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
       '/images/products/product-4.jpg',
@@ -243,7 +292,7 @@ export const products = [
     quantityAvailable: 2,
     category: 'T-shirt',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
+    sizes: ['xl', 'l'],
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
       '/images/products/product-5.jpg',
@@ -303,7 +352,7 @@ export const products = [
     quantityAvailable: 2,
     category: 'T-shirt',
     currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
+    sizes: ['xl', 'l'],
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
       '/images/products/product-6.jpg',

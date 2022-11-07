@@ -1,18 +1,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, {EffectFade, Navigation} from 'swiper';
+import SwiperCore, { EffectFade, Navigation } from 'swiper';
 
 SwiperCore.use([EffectFade, Navigation]);
 
 const PageIntro = () => {
 
   return (
-    <section className="page-intro">  
+    <section className="page-intro">
       <Swiper navigation effect="fade" className="swiper-wrapper">
-        <SwiperSlide>
-          <div className="page-intro__slide" style={{ backgroundImage: "url('/images/slide-1.jpg')" }}>
+        <SwiperSlide zoom={true}>
+          <div className="page-intro__slide" style={{ backgroundImage: "url('/images/img1.jpg')" }}>
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Sale of the summer collection</h2>
+                <h2>Sale of the best spices collection</h2>
                 <a href="#" className="btn-shop"><i className="icon-right"></i>Shop now</a>
               </div>
             </div>
@@ -20,11 +20,11 @@ const PageIntro = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="page-intro__slide" style={{ backgroundImage: "url('/images/slide-2.jpg')" }}>
+          <div className="page-intro__slide" style={{ backgroundImage: "url('/images/img2.jpeg')" }}>
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Make your house into a home</h2>
-                <a href="#" className="btn-shop"><i className="icon-right"></i>Shop now</a>
+                <h2>Make your food delicious</h2>
+                <a href="products" className="btn-shop"><i className="icon-right"></i>Shop now</a>
               </div>
             </div>
           </div>
@@ -38,10 +38,10 @@ const PageIntro = () => {
               <i className="icon-shipping"></i>
               <div className="data-item__content">
                 <h4>Free Shipping</h4>
-                <p>On purchases over $199</p>
+                <p>On purchases over ₹1000</p>
               </div>
             </li>
-            
+
             <li>
               <i className="icon-shipping"></i>
               <div className="data-item__content">
@@ -49,12 +49,12 @@ const PageIntro = () => {
                 <p>Our clients' opinions speak for themselves</p>
               </div>
             </li>
-            
+
             <li>
               <i className="icon-cash"></i>
               <div className="data-item__content">
                 <h4>Originality Guaranteed</h4>
-                <p>30 days warranty for each product from our store</p>
+                <p>10 days warranty for each product from our store</p>
               </div>
             </li>
           </ul>

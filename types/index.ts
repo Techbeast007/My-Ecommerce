@@ -23,20 +23,20 @@ export type ProductType = {
   price: string;
   count: number;
   color: string;
-  size: string;
+  sizes: string[];
   images: string[];
   discount?: string;
   currentPrice: number;
   punctuation: PunctuationType;
   reviews: ReviewType[];
+  description: String;
 }
 
 export type ProductTypeList = {
   id: string;
   name: string;
   price: string;
-  color: string;
-  images: string[];
+  images: string;
   discount?: string;
   currentPrice?: number;
 }
@@ -48,12 +48,12 @@ export type ProductStoreType = {
   price: number;
   count: number;
   color: string;
-  size: string;
+  sizes: string[];
 }
 
 export type GtagEventType = {
   action: string;
-  category: string; 
+  category: string;
   label: string;
   value: string
 }

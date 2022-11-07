@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import productsColors from './../../../utils/data/products-colors';
-import productsSizes from './../../../utils/data/products-sizes';
-import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
 import { useDispatch, useSelector } from 'react-redux';
 import { some } from 'lodash';
 import { addProduct } from 'store/reducers/cart';
 import { toggleFavProduct } from 'store/reducers/user';
 import { ProductType, ProductStoreType } from 'types';
 import { RootState } from 'store';
+import ReactWhatsapp from 'react-whatsapp';
 
 type ProductContent = {
   product: ProductType;
@@ -27,21 +25,21 @@ const Content = ({ product }: ProductContent) => {
 
   const toggleFav = () => {
     dispatch(toggleFavProduct(
-      { 
+      {
         id: product.id,
       }
     ))
   }
 
   const addToCart = () => {
-    const productToSave: ProductStoreType = { 
+    const productToSave: ProductStoreType = {
       id: product.id,
       name: product.name,
       thumb: product.images ? product.images[0] : '',
       price: product.currentPrice,
       count: count,
       color: color,
-      size: itemSize
+      sizes: product.sizes
     }
 
     const productStore = {
@@ -60,17 +58,17 @@ const Content = ({ product }: ProductContent) => {
         <h2 className="product__name">{product.name}</h2>
 
         <div className="product__prices">
-          <h4>${ product.currentPrice }</h4>
+          <h4>₹{product.currentPrice}</h4>
           {product.discount &&
-            <span>${ product.price }</span>
+            <span>₹{product.price}</span>
           }
         </div>
       </div>
 
       <div className="product-content__filters">
         <div className="product-filter-item">
-          <h5>Color:</h5>
-          <div className="checkbox-color-wrapper">
+          {/* <h5>Color:</h5> */}
+          {/* <div className="checkbox-color-wrapper">
             {productsColors.map(type => (
               <CheckboxColor 
                 key={type.id} 
@@ -81,7 +79,7 @@ const Content = ({ product }: ProductContent) => {
                 onChange={onColorSet} 
               />
             ))}
-          </div>
+          </div> */}
         </div>
         <div className="product-filter-item">
           <h5>Size: <strong>See size table</strong></h5>
@@ -89,34 +87,38 @@ const Content = ({ product }: ProductContent) => {
             <div className="select-wrapper">
               <select onChange={onSelectChange}>
                 <option>Choose size</option>
-                {productsSizes.map(type => (
-                  <option value={type.label}>{type.label}</option>
+                {product.sizes.map(type => (
+                  <option value={type}>{type}</option>
                 ))}
               </select>
             </div>
           </div>
         </div>
         <div className="product-filter-item">
-          <h5>Quantity:</h5>
+          {/* <h5>Quantity:</h5> */}
           <div className="quantity-buttons">
-            <div className="quantity-button">
-              <button type="button" onClick={() => setCount(count - 1)} className="quantity-button__btn">
+            {/* <div className="quantity-button"> */}
+            {/* <button type="button" onClick={() => setCount(count - 1)} className="quantity-button__btn">
                 -
               </button>
               <span>{count}</span>
               <button type="button" onClick={() => setCount(count + 1)} className="quantity-button__btn">
                 +
-              </button>
-            </div>
-            
-            <button type="submit" onClick={() => addToCart()} className="btn btn--rounded btn--yellow">Add to cart</button>
-            <button type="button" onClick={toggleFav} className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}><i className="icon-heart"></i></button>
+              </button> */}
+            {/* </div> */}
+
+
+            <a
+              href="https://wa.me/+916397026980"
+              target="_blank"
+              rel="noopener noreferrer"
+            >            <button type="submit" className="btn btn--rounded btn--yellow"> Buy Now</button></a>
+            {/* <button type="button" onClick={toggleFav} className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}><i className="icon-heart"></i></button> */}
           </div>
         </div>
       </div>
     </section>
   );
 };
-  
+
 export default Content;
-    

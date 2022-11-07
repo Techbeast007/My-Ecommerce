@@ -1,8 +1,9 @@
 type ProductDescriptionType = {
   show: boolean;
+  description: String,
 }
 
-const Description = ({ show }: ProductDescriptionType) => {
+const Description = ({ show, description }: ProductDescriptionType) => {
   const style = {
     display: show ? 'flex' : 'none',
   }
@@ -12,16 +13,11 @@ const Description = ({ show }: ProductDescriptionType) => {
       <div className="product-description-block">
         <i className="icon-cart"></i>
         <h4>Details and product description</h4>
-        <p>White Summer Vibes T-shirt in the uiKit line with a colorful print. <br></br>Made of jersey cotton. T-shirt fits perfectly with jeans, pants or shorts.</p>
+        <p>{description}</p>
       </div>
-      <div className="product-description-block">
-        <i className="icon-cart"></i>
-        <h4>Details and product description</h4>
-        <p>White Summer Vibes T-shirt in the uiKit line with a colorful print. <br></br>Made of jersey cotton. T-shirt fits perfectly with jeans, pants or shorts.</p>
-      </div>
+
     </section>
   );
 };
-  
+
 export default Description;
-    
