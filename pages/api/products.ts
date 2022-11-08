@@ -11,7 +11,6 @@ const DataCall = async () => {
 
 
 
-
   return await client.fetch(groq`*[_type == "ecom"]{
     id,
 name,
