@@ -2,7 +2,7 @@ import { useState } from "react";
 import client from '../../lib/sanity';
 import groq from 'groq'
 // import { homepageQuery } from "pages/product/[pid]";
-import { homepageQuerys } from "pages/index"
+// import { homepageQuerys } from "pages/index"
 
 
 
@@ -38,7 +38,7 @@ import { homepageQuerys } from "pages/index"
 
 // export const homepageQuery = data
 
-console.log(homepageQuerys)
+// console.log(homepageQuerys)
 // export const products = homepageQuerys.length ? homepageQuerys : homepageQuery
 // console.log(products)
 
