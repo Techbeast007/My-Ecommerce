@@ -21,6 +21,8 @@ const Header = ({ isErrorPage }: HeaderType) => {
   const navRef = useRef(null);
   const searchRef = useRef(null);
 
+
+
   const headerClass = () => {
     if (window.pageYOffset === 0) {
       setOnTop(true);
