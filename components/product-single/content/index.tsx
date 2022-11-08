@@ -1,54 +1,54 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { some } from 'lodash';
-import { addProduct } from 'store/reducers/cart';
-import { toggleFavProduct } from 'store/reducers/user';
-import { ProductType, ProductStoreType } from 'types';
-import { RootState } from 'store';
-import ReactWhatsapp from 'react-whatsapp';
+// import { useState } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { some } from 'lodash';
+// import { addProduct } from 'store/reducers/cart';
+// import { toggleFavProduct } from 'store/reducers/user';
+import { ProductType } from 'types';
+// import { RootState } from 'store';
+// import ReactWhatsapp from 'react-whatsapp';
 
 type ProductContent = {
   product: ProductType;
 }
 
 const Content = ({ product }: ProductContent) => {
-  const dispatch = useDispatch();
-  const [count, setCount] = useState<number>(1);
-  const [color, setColor] = useState<string>('');
-  const [itemSize, setItemSize] = useState<string>('');
+  // const dispatch = useDispatch();
+  // const [count, setCount] = useState<number>(1);
+  // const [color, setColor] = useState<string>('');
+  // const [itemSize, setItemSize] = useState<string>('');
 
-  const onColorSet = (e: string) => setColor(e);
-  const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => setItemSize(e.target.value);
+  // const onColorSet = (e: string) => setColor(e);
+  // const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => setItemSize(e.target.value);
 
-  const { favProducts } = useSelector((state: RootState) => state.user);
-  const isFavourite = some(favProducts, productId => productId === product.id);
+  // const { favProducts } = useSelector((state: RootState) => state.user);
+  // const isFavourite = some(favProducts, productId => productId === product.id);
 
-  const toggleFav = () => {
-    dispatch(toggleFavProduct(
-      {
-        id: product.id,
-      }
-    ))
-  }
+  // const toggleFav = () => {
+  //   dispatch(toggleFavProduct(
+  //     {
+  //       id: product.id,
+  //     }
+  //   ))
+  // }
 
-  const addToCart = () => {
-    const productToSave: ProductStoreType = {
-      id: product.id,
-      name: product.name,
-      thumb: product.images ? product.images[0] : '',
-      price: product.currentPrice,
-      count: count,
-      color: color,
-      sizes: product.sizes
-    }
+  // const addToCart = () => {
+  //   const productToSave: ProductStoreType = {
+  //     id: product.id,
+  //     name: product.name,
+  //     thumb: product.images ? product.images[0] : '',
+  //     price: product.currentPrice,
+  //     count: count,
+  //     color: color,
+  //     sizes: product.sizes
+  //   }
 
-    const productStore = {
-      count,
-      product: productToSave
-    }
+  //   const productStore = {
+  //     count,
+  //     product: productToSave
+  //   }
 
-    dispatch(addProduct(productStore));
-  }
+  //   dispatch(addProduct(productStore));
+  // }
 
   return (
     <section className="product-content">
@@ -85,7 +85,7 @@ const Content = ({ product }: ProductContent) => {
           <h5>Size: <strong>See size table</strong></h5>
           <div className="checkbox-color-wrapper">
             <div className="select-wrapper">
-              <select onChange={onSelectChange}>
+              <select>
                 <option>Choose size</option>
                 {product.sizes.map(type => (
                   <option value={type}>{type}</option>
