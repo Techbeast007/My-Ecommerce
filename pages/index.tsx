@@ -2,10 +2,6 @@ import Layout from '../layouts/Main';
 import PageIntro from '../components/page-intro';
 import ProductsFeatured from '../components/products-featured';
 import Footer from '../components/footer';
-import Subscribe from '../components/subscribe';
-import { useState, useEffect } from 'react';
-import groq from 'groq'
-import client from 'lib/sanity';
 import ReactPlayer from 'react-player'
 
 
