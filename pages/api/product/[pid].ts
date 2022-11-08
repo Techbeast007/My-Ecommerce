@@ -3,7 +3,7 @@ import client from 'lib/sanity';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // fake data
-import products from '../../../utils/data/products';
+
 let homepageQuerys: any = []
 const DataCall = async () => {
 
